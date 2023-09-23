@@ -9,12 +9,12 @@ function reload(){
 async function fetchNews(query){
    const res= await fetch(`${url}${query}&apiKey=${API_KEY}`);
    const data= await res.json();
-  bindData(data.articles);
- 
+  
+   getdatadb(data.articles);
 
-}
+} 
 
-function bindData(articles){
+function getdatadb(articles){
     const cardsContainer=document.getElementById("cards-container");
     const newsCardTemplate=document.getElementById("template-news-card");
 
